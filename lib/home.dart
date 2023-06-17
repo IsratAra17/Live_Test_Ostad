@@ -33,30 +33,48 @@ CallData() async{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(child: ListView.builder(
+      body: Container(child: Column(children: [
+        ElevatedButton(onPressed: (){
+
+
+          setState(() async{
+            await CallData();
+          });
+
+        }, child: Text("C")),
+      ListView.builder(
         itemCount: Items.length,
         shrinkWrap: true,
         scrollDirection: Axis.vertical,
         itemBuilder: (context,index){
           return InkWell(
             onTap: (){
-              setState(() {
-
+              setState(()async {
+                print("Calldata done");
+                await CallData();
               });
             },
             child:
-              Column(
+            Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-              Text(Items[index]['title'],style: TextStyle(color: Colors.black87),),
-              Text(Items[index]['body'],style:TextStyle(color: Colors.black87),),
-              SizedBox(height: 20,),
-]
+                  Text(Items[index]['title'],style: TextStyle(color: Colors.black87),),
+                  Text(Items[index]['body'],style:TextStyle(color: Colors.black87),),
+                  SizedBox(height: 20,),
+                ]
             ),
           );
         },
-      ),),
+      ),
+
+
+
+
+
+
+
+    ])),
     );
   }
 }

@@ -17,6 +17,8 @@ Future<List>GetRequest() async {
   var ResultBody = json.decode(response.body);
   if (ResultCode == 200) {
     print("Success request");
+    print("$ResultBody['data]");
+
     return ResultBody['data'];
   } else {
     print("Error request");
