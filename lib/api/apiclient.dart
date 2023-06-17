@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 var BaseURL = "https://jsonplaceholder.typicode.com/posts";
 var RequestHeader = {"Content-Type": "application/json"};
 
-Future<List> TaskListRequest(Status) async {
+Future<List>GetRequest() async {
   var URL = Uri.parse("${BaseURL}");
   print("URL: $BaseURL") ;
 
